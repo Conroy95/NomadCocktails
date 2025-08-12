@@ -5,6 +5,7 @@
   "display": "standalone",
   "background_color": "#ffb347",
   "theme_color": "#ff7043",
+  "description": "Simpel cocktailmenu met zoekfunctie, favorieten en dark mode.",
   "icons": [
     {
       "src": "icons/cocktail-192.png",
