@@ -26,6 +26,11 @@ document.addEventListener('DOMContentLoaded', () => {
   if (localStorage.getItem('darkMode') === 'true') {
     document.body.classList.add('dark');
   }
+
+  // PWA service worker registreren
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js');
+  }
 });
 
 function renderCocktails(cocktails) {
