@@ -1,0 +1,78 @@
+:root {
+  --bg-color: #fff;
+  --text-color: #333;
+  --card-bg: #ffe9dc;
+}
+
+body.dark {
+  --bg-color: #1a1a1a;
+  --text-color: #f0f0f0;
+  --card-bg: #333;
+}
+
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
+  font-family: sans-serif;
+  margin: 0;
+}
+
+header {
+  padding: 1rem;
+  text-align: center;
+}
+
+#search {
+  width: 80%;
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.cocktail-card {
+  background: var(--card-bg);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+
+.cocktail-card:hover {
+  transform: scale(1.02);
+}
+
+.cocktail-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.cocktail-card h2 {
+  margin: 0.5rem;
+}
+
+.cocktail-card p {
+  margin: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.favorite-btn {
+  display: block;
+  margin: 0.5rem;
+  padding: 0.3rem;
+  background: #ff7043;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.favorite-btn.active {
+  background: #ffb347;
+}
