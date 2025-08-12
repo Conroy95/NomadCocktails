@@ -1,0 +1,14 @@
+[
+  {
+    "name": "Mojito",
+    "image": "img/mojito.jpg",
+    "ingredients": ["50ml witte rum", "Sodawater", "Muntblaadjes", "Limoensap", "Rietsuiker"],
+    "instructions": "Munt en suiker kneuzen, rum en limoensap toevoegen, aanvullen met soda."
+  },
+  {
+    "name": "Piña Colada",
+    "image": "img/pina-colada.jpg",
+    "ingredients": ["60ml witte rum", "120ml ananassap", "60ml kokosroom"],
+    "instructions": "Alles met ijs in blender, serveren in hoog glas."
+  }
+]
