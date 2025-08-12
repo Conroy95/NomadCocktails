@@ -10,5 +10,11 @@
     "image": "img/pina-colada.jpg",
     "ingredients": ["60ml witte rum", "120ml ananassap", "60ml kokosroom"],
     "instructions": "Alles met ijs in blender, serveren in hoog glas."
+  },
+  {
+    "name": "Tequila Sunrise",
+    "image": "img/tequila-sunrise.jpg",
+    "ingredients": ["45ml tequila", "90ml sinaasappelsap", "15ml grenadine"],
+    "instructions": "Tequila en sinaasappelsap in glas, grenadine langzaam toevoegen voor sunrise effect."
   }
 ]
