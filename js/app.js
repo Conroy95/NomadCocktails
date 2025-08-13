@@ -2,6 +2,7 @@ let cocktailsData = [];
 let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
 
 document.addEventListener('DOMContentLoaded', () => {
+  // Recepten laden
   fetch('cocktails.json')
     .then(res => res.json())
     .then(data => {
@@ -9,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
       renderCocktails(data);
     });
 
+  // Zoekfunctie
   document.getElementById('search').addEventListener('input', e => {
     const query = e.target.value.toLowerCase();
     const filtered = cocktailsData.filter(c =>
@@ -18,16 +20,17 @@ document.addEventListener('DOMContentLoaded', () => {
     renderCocktails(filtered);
   });
 
-  document.getElementById('toggle-dark').addEventListener('click', () => {
+  // Dark mode
+  const toggle = document.getElementById('toggle-dark');
+  toggle.addEventListener('click', () => {
     document.body.classList.toggle('dark');
     localStorage.setItem('darkMode', document.body.classList.contains('dark'));
   });
-
   if (localStorage.getItem('darkMode') === 'true') {
     document.body.classList.add('dark');
   }
 
-  // PWA service worker registreren
+  // Service Worker voor PWA
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('/service-worker.js');
   }
@@ -38,7 +41,7 @@ function renderCocktails(cocktails) {
   list.innerHTML = '';
   cocktails.forEach(cocktail => {
     const isFav = favorites.includes(cocktail.name);
-    list.innerHTML += `
+    const card = `
       <div class="cocktail-card">
         <img src="${cocktail.image}" alt="${cocktail.name}">
         <h2>${cocktail.name}</h2>
@@ -49,6 +52,7 @@ function renderCocktails(cocktails) {
         </button>
       </div>
     `;
+    list.innerHTML += card;
   });
 }
 
