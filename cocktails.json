@@ -22,5 +22,11 @@
     "image": "img/tequila-sunrise.jpg",
     "ingredients": ["45ml tequila", "90ml sinaasappelsap", "15ml grenadine"],
     "instructions": "Tequila en sinaasappelsap in glas, grenadine langzaam toevoegen voor sunrise effect."
+  },
+  {
+    "name": "Firebal Choco",
+    "image": "img/tequila-sunrise.jpg",
+    "ingredients": ["45ml tequila", "90ml sinaasappelsap", "15ml grenadine"],
+    "instructions": "Tequila en sinaasappelsap in glas, grenadine langzaam toevoegen voor sunrise effect."
   }
 ]
