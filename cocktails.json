@@ -6,24 +6,6 @@
     "instructions": "Rijk, Vanille en Caramel-achtig met een vleugje Rum."
   },
   {
-    "name": "Mojito",
-    "image": "img/mojito.jpg",
-    "ingredients": ["50ml witte rum", "Sodawater", "Muntblaadjes", "Limoensap", "Rietsuiker"],
-    "instructions": "Munt en suiker kneuzen, rum en limoensap toevoegen, aanvullen met soda."
-  },
-  {
-    "name": "Piña Colada",
-    "image": "img/pina-colada.jpg",
-    "ingredients": ["60ml witte rum", "120ml ananassap", "60ml kokosroom"],
-    "instructions": "Alles met ijs in blender, serveren in hoog glas."
-  },
-  {
-    "name": "Tequila Sunrise",
-    "image": "img/tequila-sunrise.jpg",
-    "ingredients": ["45ml tequila", "90ml sinaasappelsap", "15ml grenadine"],
-    "instructions": "Tequila en sinaasappelsap in glas, grenadine langzaam toevoegen voor sunrise effect."
-  },
-  {
     "name": "Firebal Choco",
     "image": "img/tequila-sunrise.jpg",
     "ingredients": ["45ml tequila", "90ml sinaasappelsap", "15ml grenadine"],
