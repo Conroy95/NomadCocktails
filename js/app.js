@@ -2,20 +2,20 @@ let cocktailsData = [];
 let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
 
 document.addEventListener('DOMContentLoaded', () => {
-  const listElement = document.getElementById('cocktail-list');
   const searchInput = document.getElementById('search');
   const toggleBtn = document.getElementById('toggle-dark');
 
-  // Cocktails laden
+  // Fetch data
   fetch('cocktails.json')
     .then(res => res.json())
     .then(data => {
       cocktailsData = data;
       renderCocktails(data);
-    });
+    })
+    .catch(err => console.error("Oeps! Data niet gevonden."));
 
-  // Zoekfunctie
-  searchInput.addEventListener('input', e => {
+  // Zoeken met kleine vertraging voor rustiger beeld
+  searchInput.addEventListener('input', (e) => {
     const query = e.target.value.toLowerCase();
     const filtered = cocktailsData.filter(c =>
       c.name.toLowerCase().includes(query) ||
@@ -24,37 +24,38 @@ document.addEventListener('DOMContentLoaded', () => {
     renderCocktails(filtered);
   });
 
-  // Dark mode
-  const toggleTheme = () => {
+  // Dark Mode Toggle
+  toggleBtn.addEventListener('click', () => {
     document.body.classList.toggle('dark');
     const isDark = document.body.classList.contains('dark');
     localStorage.setItem('darkMode', isDark);
     toggleBtn.textContent = isDark ? '☀️' : '🌙';
-  };
+  });
 
-  toggleBtn.addEventListener('click', toggleTheme);
   if (localStorage.getItem('darkMode') === 'true') {
     document.body.classList.add('dark');
     toggleBtn.textContent = '☀️';
   }
 
-  // PWA Service Worker
+  // PWA SW
   if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('./service-worker.js').catch(err => console.log(err));
+    navigator.serviceWorker.register('./service-worker.js');
   }
 });
 
 function renderCocktails(cocktails) {
   const list = document.getElementById('cocktail-list');
+  
   if (cocktails.length === 0) {
-    list.innerHTML = `<p style="text-align:center; grid-column:1/-1; padding:40px; opacity:0.5;">Geen cocktails gevonden...</p>`;
+    list.innerHTML = `<div class="empty-state">Geen cocktails gevonden... 🍹</div>`;
     return;
   }
 
-  list.innerHTML = cocktails.map(cocktail => {
+  // Gebruik map en join voor betere performance dan +=
+  list.innerHTML = cocktails.map((cocktail, index) => {
     const isFav = favorites.includes(cocktail.name);
     return `
-      <div class="cocktail-card">
+      <div class="cocktail-card" style="animation-delay: ${index * 0.05}s">
         <img src="${cocktail.image}" alt="${cocktail.name}" loading="lazy">
         <div class="card-info">
           <p class="ingredients">${cocktail.ingredients.join(' • ')}</p>
@@ -63,7 +64,7 @@ function renderCocktails(cocktails) {
         </div>
         <button class="favorite-btn ${isFav ? 'active' : ''}" 
                 onclick="toggleFavorite('${cocktail.name.replace(/'/g, "\\'")}')">
-          ${isFav ? '★ Favoriet' : '☆ Voeg toe'}
+          ${isFav ? '★ Opgeslagen' : '☆ Bewaar recept'}
         </button>
       </div>
     `;
@@ -71,11 +72,10 @@ function renderCocktails(cocktails) {
 }
 
 window.toggleFavorite = function(name) {
-  if (favorites.includes(name)) {
-    favorites = favorites.filter(f => f !== name);
-  } else {
-    favorites.push(name);
-  }
+  favorites = favorites.includes(name) 
+    ? favorites.filter(f => f !== name) 
+    : [...favorites, name];
+    
   localStorage.setItem('favorites', JSON.stringify(favorites));
-  renderCocktails(cocktailsData); // Refresh lijst om de ster-status te updaten
+  renderCocktails(cocktailsData);
 };
