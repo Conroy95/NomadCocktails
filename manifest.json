@@ -1,16 +1,24 @@
 {
-  "name": "Cocktail Menu",
-  "short_name": "Cocktails",
-  "start_url": ".",
+  "name": "Nomad Cocktails Recepten",
+  "short_name": "Nomad",
+  "description": "Ontdek en bewaar de beste cocktailrecepten voor de moderne barman.",
+  "start_url": "./index.html",
   "display": "standalone",
-  "background_color": "#ffb347",
+  "background_color": "#1a1a1a",
   "theme_color": "#ff7043",
-  "description": "Simpel cocktailmenu met zoekfunctie, favorieten en dark mode.",
+  "orientation": "portrait",
   "icons": [
     {
       "src": "icons/cocktail-192.png",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/cocktail-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
     },
     {
       "src": "icons/cocktail-512.png",
