@@ -2,13 +2,31 @@
   {
     "name": "Rum Crème Brûlée",
     "image": "img/rumcremebrulee.jpg",
-    "ingredients": ["40ml Licor 43 Crème Brûlée", "20ml Havana Club", "Klein beetje kaneel suiker"],
-    "instructions": "Rijk, Vanille en Caramel-achtig met een vleugje Rum."
+    "ingredients": [
+      "40ml Licor 43 Crème Brûlée",
+      "20ml Havana Club Rum",
+      "Snufje kaneelsuiker"
+    ],
+    "instructions": "Rijk, vanille- en caramelachtig. Shake de ingrediënten krachtig met ijs en strain in een gekoeld glas. Garneer met kaneelsuiker."
   },
   {
-    "name": "Firebal Choco",
+    "name": "Fireball Choco",
+    "image": "img/fireballchoco.jpg",
+    "ingredients": [
+      "45ml Fireball Whisky",
+      "120ml Warme chocolademelk",
+      "Toef slagroom"
+    ],
+    "instructions": "Een heerlijke winterse verwarmer. Meng de Fireball met warme chocolademelk in een mok en maak het af met een flinke toef slagroom."
+  },
+  {
+    "name": "Tequila Sunrise",
     "image": "img/tequila-sunrise.jpg",
-    "ingredients": ["45ml tequila", "90ml sinaasappelsap", "15ml grenadine"],
-    "instructions": "Tequila en sinaasappelsap in glas, grenadine langzaam toevoegen voor sunrise effect."
+    "ingredients": [
+      "45ml Tequila",
+      "90ml Sinaasappelsap",
+      "15ml Grenadine"
+    ],
+    "instructions": "Schenk de tequila en het sap in een glas met ijs. Giet de grenadine er voorzichtig bij zodat het naar de bodem zakt voor het sunrise-effect."
   }
 ]
